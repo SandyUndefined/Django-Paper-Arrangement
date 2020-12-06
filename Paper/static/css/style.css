@@ -39,3 +39,6 @@ opacity:1;
 -moz-animation: blink 0.7s infinite;
 animation: blink 0.7s infinite;
 }
+#csv-input {
+  display: none;
+}

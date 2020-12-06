@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}{{block.super}} HomePage {% endblock %}
+{% block title %}{{block.super}} HomePage | JSON {% endblock %}
 {% block content %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg p-3 mb-5">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,26 +15,32 @@
 </nav>
 <div class="container">
     <div class="center">
-<span id="typed" style="font-size:35px;"></span>
+<span id="jsontyped" style="font-size:35px;"></span>
     </div>
 </div>
 <div class="container mt-5 ">
 <div class="row justify-content-center">
-        <div class="col-md-6 bd-example">
-      <div class="input-group">
-        <div class="custom-file">
-          <input class="custom-file-input" id="inputGroupFile04" type="file" accept="json/*">
-          <label class="custom-file-label" for="inputGroupFile04">Upload Json</label>
-        </div>
-        <div class="input-group-append">
-          <button class="btn btn-outline-primary" type="button">Submit</button>
-        </div>
+     <div class="col-sm-12 col-lg-4 mr-auto ml-auto border p-4">
+  <form method="post" enctype="multipart/form-data" action="{% url 'Files' %}">
+      {% csrf_token %}
+    <div class="form-group">
+      <div class="custom-file">
+        <input type="file" name="files" class="custom-file-input form-control" id="customFile" accept=".json">
+        <label class="custom-file-label" for="customFile">Choose file</label>
       </div>
     </div>
+    <div class="form-group">
+      <button type="Submit" name="upload" value="upload" id="upload" class="btn btn-block btn-dark">Submit</button>
+    </div>
+  </form>
+</div>
   </div>
 </div>
 
 <footer>
         <p>Copyright &copy; | All Rights Reserved by <a class="footer-a" href="https://github.com/SandyUndefined/Django-Paper-Arrangement">Sandeep Kumar Sharma</a></p>
 </footer>
+{% load static %}
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<script  src='{% static "js/json.js" %}'></script>
 {% endblock content %}

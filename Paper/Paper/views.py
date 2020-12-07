@@ -7,7 +7,8 @@ def json(request):
     return render(request, 'json.html')
 
 
-json_data = ""
+json_file = ""
+filesname = []
 
 
 def files(request):
@@ -15,12 +16,9 @@ def files(request):
         myfiles = request.FILES['files']
         fs = FileSystemStorage()
         filename = fs.save(myfiles.name, myfiles)
-        file_url = fs.url(filename)
-        with open(settings.MEDIA_ROOT / filename) as f:
-            data = f.read()
-        json_data = data
-        print(json_data)
-        return render(request, 'files.html', {'url': file_url})
+        json_file = filename
+        print(json_file)
+        return render(request, 'files.html')
     else:
         return render(request, 'json.html')
 
@@ -29,7 +27,6 @@ def multiple_files(request):
     if request.method == 'POST' and request.FILES.getlist('files'):
         myfiles = request.FILES.getlist('files')
         fs = FileSystemStorage()
-        filesname = []
         for i in myfiles:
             filename = fs.save(i.name, i)
             filesname.append(filename)
@@ -37,3 +34,5 @@ def multiple_files(request):
         return render(request, 'logo.html')
     else:
         return render(request, 'files.html')
+
+

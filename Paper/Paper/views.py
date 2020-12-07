@@ -1,10 +1,15 @@
+from wsgiref.util import FileWrapper
+
 from django.core.files.storage import FileSystemStorage
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
+
 from Paper.paper import values
 
 
 def json(request):
     return render(request, 'json.html')
+
 
 def files(request):
     if request.method == 'POST' and request.FILES['files']:
@@ -41,10 +46,31 @@ def logo(request):
         # data retrive
         json_file = request.session.get('files', None)
         filesname = request.session.get('filename', None)
-        print(f'This is my logo {logo_file} \n this is my header {header} \n this is my json data {json_file} \n this is my text file {filesname}')
-        output_data = values(json_file,filesname,logo_file,header)
+        print(
+            f'This is my logo {logo_file} \n this is my header {header} \n this is my json data {json_file} \n this is my text file {filesname}')
+        values(json_file, filesname, logo_file, header)
         return render(request, 'download.html')
     else:
         return render(request, 'logo.html')
+
+
+def pdf_download(request):
+    f = open('paper.pdf', 'r', encoding="utf8")
+    response = HttpResponse(FileWrapper(f), content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename=paper.pdf'
+    f.close()
+    return response
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -25,7 +25,8 @@ urlpatterns = [
     path('',views.json,name='Json'),
     path('files',views.files,name='Files'),
     path('name',views.multiple_files,name='TextFiles'),
-    path('download',views.logo,name='Download')
+    path('download',views.logo,name='Download'),
+    path('pdf_download',views.pdf_download,name='PDF')
 ]
 
 if settings.DEBUG:

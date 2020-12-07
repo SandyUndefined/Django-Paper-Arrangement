@@ -1,6 +1,7 @@
 import os
 
 from django.conf import settings
+from django.core.files.storage import FileSystemStorage
 from fpdf import FPDF
 import json
 
@@ -17,12 +18,12 @@ def values(json_file, txt_file, logo, header):
     logo_data = logo
     title = header
     filenames = print_data(json_data)
-    output = data(filenames,logo_data, title)
+    data(filenames,logo_data, title)
 
 
 def print_data(json_data):
     # Json to Dict
-    with open(os.path.join(settings.MEDIA_ROOT, json_data), 'rb') as jf:
+    with open(os.path.join(settings.MEDIA_ROOT, json_data), 'r',encoding="utf8") as jf:
         data_dict = json.load(jf)
 
     # Sorting Dict and Saving them in List

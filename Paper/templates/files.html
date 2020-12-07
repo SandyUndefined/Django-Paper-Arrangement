@@ -23,11 +23,11 @@
 <div class="container mt-5 ">
 <div class="row justify-content-center">
      <div class="col-sm-12 col-lg-4 mr-auto ml-auto border p-4">
-  <form method="post" enctype="multipart/form-data" action="{% url 'Files' %}">
+  <form method="post" enctype="multipart/form-data" action="{% url 'TextFiles' %}">
       {% csrf_token %}
     <div class="form-group">
       <div class="custom-file">
-        <input type="file" name="files[]" class="custom-file-input form-control" id="customFile" accept=".txt" multiple>
+        <input type="file" name="files" class="custom-file-input form-control" id="customFile" accept=".txt" multiple>
         <label class="custom-file-label" for="customFile">Choose file</label>
       </div>
     </div>

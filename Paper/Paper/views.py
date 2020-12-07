@@ -22,4 +22,18 @@ def files(request):
         print(json_data)
         return render(request, 'files.html', {'url': file_url})
     else:
+        return render(request, 'json.html')
+
+
+def multiple_files(request):
+    if request.method == 'POST' and request.FILES.getlist('files'):
+        myfiles = request.FILES.getlist('files')
+        fs = FileSystemStorage()
+        filesname = []
+        for i in myfiles:
+            filename = fs.save(i.name, i)
+            filesname.append(filename)
+        print(filesname)
+        return render(request, 'logo.html')
+    else:
         return render(request, 'files.html')

@@ -23,7 +23,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.json,name='Json'),
-    path('files',views.files,name='Files')
+    path('files',views.files,name='Files'),
+    path('name',views.multiple_files,name='TextFiles')
 ]
 
 if settings.DEBUG:

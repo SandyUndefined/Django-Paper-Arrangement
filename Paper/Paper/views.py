@@ -9,6 +9,8 @@ def json(request):
 
 json_file = ""
 filesname = []
+logo_file = ""
+header = ""
 
 
 def files(request):
@@ -36,3 +38,15 @@ def multiple_files(request):
         return render(request, 'files.html')
 
 
+def logo(request):
+    if request.method == 'POST' and request.POST.get('header') != '':
+        header = request.POST.get('header')
+        myfiles = request.FILES['files']
+        fs = FileSystemStorage()
+        filename = fs.save(myfiles.name, myfiles)
+        logo_file = filename
+        print(logo_file)
+        print(header)
+        return render(request, 'download.html')
+    else:
+        return render(request, 'logo.html')

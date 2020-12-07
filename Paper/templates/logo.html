@@ -2,27 +2,57 @@
 {% block title %}{{block.super}} HomePage | JSON {% endblock %}
 {% block content %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg p-3 mb-5">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="container d-flex justify-content-center">
-      <h4 class="navbar-text text-white">
-    Django Paper Arrangement
-  </h4>
-  </div>
+    <div class="container d-flex justify-content-center">
+        <h4 class="navbar-text text-white">
+            Django Paper Arrangement
+        </h4>
+    </div>
 
 </nav>
 <div class="container">
     <div class="center">
-<span id="logotyped" style="font-size:35px;"></span>
+        <span id="logotyped" style="font-size:35px;"></span>
+    </div>
+</div>
+
+<div class="container mt-5 ">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-lg-4 mr-auto ml-auto border p-4">
+            <form method="post" enctype="multipart/form-data" action="{% url 'Download' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <div class="custom-file">
+                        <input type="file" name="files" class="custom-file-input form-control" id="customFile"
+                               accept="image/*">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="header" placeholder="Enter Header">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="Submit" name="upload" value="upload" id="upload" class="btn btn-block btn-dark">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
 <footer>
-        <p>Copyright &copy; | All Rights Reserved by <a class="footer-a" href="https://github.com/SandyUndefined/Django-Paper-Arrangement">Sandeep Kumar Sharma</a></p>
+    <p>Copyright &copy; | All Rights Reserved by <a class="footer-a"
+                                                    href="https://github.com/SandyUndefined/Django-Paper-Arrangement">Sandeep
+        Kumar Sharma</a></p>
 </footer>
 {% load static %}
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-<script  src='{% static "js/logo.js" %}'></script>
+<script src='{% static "js/logo.js" %}'></script>
 {% endblock content %}

@@ -24,7 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.json,name='Json'),
     path('files',views.files,name='Files'),
-    path('name',views.multiple_files,name='TextFiles')
+    path('name',views.multiple_files,name='TextFiles'),
+    path('download',views.logo,name='Download')
 ]
 
 if settings.DEBUG:

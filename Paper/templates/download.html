@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}{{block.super}} HomePage | JSON {% endblock %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg p-3 mb-5">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-</body>
-</html>
+    <div class="container d-flex justify-content-center">
+        <h4 class="navbar-text text-white">
+            Django Paper Arrangement
+        </h4>
+    </div>
+
+</nav>
+<div class="container">
+    <div class="center">
+        <span id="pdftyped" style="font-size:35px;"></span>
+    </div>
+</div>
+
+<footer>
+    <p>Copyright &copy; | All Rights Reserved by
+        <a class="footer-a" href="https://github.com/SandyUndefined/Django-Paper-Arrangement">Sandeep Kumar Sharma</a></p>
+</footer>
+{% load static %}
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<script src='{% static "js/pdf.js" %}'></script>
+{% endblock content %}

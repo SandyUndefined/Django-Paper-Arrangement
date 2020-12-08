@@ -55,7 +55,7 @@ def logo(request):
 
 
 def pdf_download(request):
-    f = open('paper.pdf', 'r', encoding="utf8")
+    f = open('paper.pdf', 'rb')
     response = HttpResponse(FileWrapper(f), content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=paper.pdf'
     f.close()

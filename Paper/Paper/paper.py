@@ -47,6 +47,9 @@ class PDF(FPDF):
         self.set_font('Arial', 'B', 21)
         self.set_text_color(r=5, g=57, b=107)
         self.text(62, 15, self.title)
+        self.line(self.l_margin, self.t_margin, self.fw - self.r_margin, self.t_margin)
+        self.line(self.l_margin, self.t_margin + 1, self.fw - self.r_margin, self.t_margin + 1)
+        self.cell(0, 20, '', ln=1)
 
     def footer(self):
         self.set_y(-15)
@@ -57,6 +60,7 @@ class PDF(FPDF):
         self.set_top_margin(25)
         self.set_font('Arial', 'B', 16)
         self.cell(0, 6, name[:-4], 0, 0, 'C', 0)
+        self.cell(0, 12, '', ln=1)
         self.ln(4)
 
     def question(self, name):

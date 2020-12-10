@@ -1,7 +1,12 @@
-import os
+# Github: https://github.com/SandyUndefined/Paper-Arrangement
+# This programe is create by Sandeep Kumar Sharma
+"""
+Github : https://github.com/SandyUndefined/Paper-Arrangement
+LinkedIn : https://www.linkedin.com/in/sandeep-kumar-sharma-b44a92129/
+"""
 
+import os
 from django.conf import settings
-from django.core.files.storage import FileSystemStorage
 from fpdf import FPDF
 import json
 
@@ -9,7 +14,6 @@ title = ''
 logo_data = ''
 json_data = ''
 text_file = []
-
 
 def values(json_file, txt_file, logo, header):
     json_data = json_file

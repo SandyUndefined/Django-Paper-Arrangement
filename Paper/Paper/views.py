@@ -7,10 +7,12 @@ from django.shortcuts import render, redirect
 from Paper.paper import values
 
 
+# Step 1: upload json file
 def json(request):
     return render(request, 'json.html')
 
 
+# Step 2: upload Multiple txt file
 def files(request):
     if request.method == 'POST' and request.FILES['files']:
         myfiles = request.FILES['files']
@@ -36,6 +38,7 @@ def multiple_files(request):
         return render(request, 'files.html')
 
 
+# Upload logo and name
 def logo(request):
     if request.method == 'POST' and request.POST.get('header') != '':
         header = request.POST.get('header')
@@ -54,23 +57,10 @@ def logo(request):
         return render(request, 'logo.html')
 
 
+# Step 4: Download PDF
 def pdf_download(request):
     f = open('paper.pdf', 'rb')
     response = HttpResponse(FileWrapper(f), content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=paper.pdf'
     f.close()
     return response
-
-
-
-
-
-
-
-
-
-
-
-
-
-

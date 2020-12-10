@@ -15,6 +15,7 @@ logo_data = ''
 json_data = ''
 text_file = []
 
+
 def values(json_file, txt_file, logo, header):
     json_data = json_file
     for i in txt_file:
@@ -22,12 +23,12 @@ def values(json_file, txt_file, logo, header):
     logo_data = logo
     title = header
     filenames = print_data(json_data)
-    data(filenames,logo_data, title)
+    data(filenames, logo_data, title)
 
 
 def print_data(json_data):
     # Json to Dict
-    with open(os.path.join(settings.MEDIA_ROOT, json_data), 'r',encoding="utf8") as jf:
+    with open(os.path.join(settings.MEDIA_ROOT, json_data), 'r', encoding="utf8") as jf:
         data_dict = json.load(jf)
 
     # Sorting Dict and Saving them in List
@@ -41,8 +42,8 @@ def print_data(json_data):
 # Convert text file into pdf
 
 class PDF(FPDF):
-    def __init__(self,logo_name,header):
-        super(PDF,self).__init__()
+    def __init__(self, logo_name, header):
+        super(PDF, self).__init__()
         self.logo = logo_name
         self.title = header
 
@@ -80,8 +81,8 @@ class PDF(FPDF):
         self.question(name)
 
 
-def data(filenames,logo,title):
-    pdf = PDF(logo,title)
+def data(filenames, logo, title):
+    pdf = PDF(logo, title)
     pdf.set_margins(left=15, top=25, right=15)
     for x in filenames:
         pdf.print_paper(x)

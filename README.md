@@ -1,4 +1,8 @@
 # Django-Paper-Arrangement
+Problem: Arrange text files into PDF according to JSON format given.
+
+I took this problem like setting question paper and different section refer as different text files.
+
 **_This is GUI program to arrange text file into PDF according JSON data._**
 
 **CLI based program to do the same is** [here](https://github.com/SandyUndefined/Paper-Arrangement).

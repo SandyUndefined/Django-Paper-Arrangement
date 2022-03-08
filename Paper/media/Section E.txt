@@ -1,0 +1,13 @@
+1.  What is the need of Backup in a database system?
+
+2.  Describe the methods used for Backup and recovery?
+
+3.  What is the purpose of Rollback?
+
+4.  What do you understand from functional dependencies?
+
+5.  What is data redundancy? How does it affect consistency?
+
+6.  Explain Data Independence and its types in brief.
+
+7.  Explain various Recovery techniques.

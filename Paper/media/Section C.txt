@@ -1,0 +1,11 @@
+1.  Explain three level database architecture. What are its objectives?
+
+2.  What do data independence and its types? How data independence is achieved?
+
+3.  What are advantages of DBMS?
+
+4.  Discuss the main disadvantages of a Traditional file approach?
+
+5.  What is a JOIN operation? How is it represented? Explain with example.
+
+6.  How does a tuple relational calculus differ from domain relational calculus?

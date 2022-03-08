@@ -1,0 +1,29 @@
+1.  Differentiate centralized and decentralized design.
+
+2.  What is data abstraction?
+
+3.  What are the differences between serial and non serial schedules?
+
+4.  What are the advantages and disadvantages of DDBMS?
+
+5.  What layers of transparency should be provided with a DDBMS?
+
+6.  What is data replication?
+
+7.  What is local mapping transparency?
+
+8.  Describe two phase locking protocol.
+
+9.  What is load balancing?
+
+10. What are the disadvantages of file server architecture?
+
+11. Discuss main tasks associated with the administration of a data warehouse.
+
+12. What is warehouse manager?
+
+13. Describe Codd rules for OLAP tools.
+
+14. What is predictive modeling?
+
+15. Define primary key and super key.

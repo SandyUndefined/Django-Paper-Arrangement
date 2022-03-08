@@ -1,0 +1,19 @@
+1.  Describe main purposes and activities associated with each stage of database.
+
+2.  Compare and contrast the three phases of database design.
+
+3.  Describe the main advantages of using prototyping approach.
+
+4.  Explain the types of transparencies in a DDBMS.
+
+5.  Explain single site processing, single site data.
+
+6.  What is TP monitor? What advantages does TP monitor bring to an OLTP environment?
+
+7.  Give diagrammatic representation of architecture and components of data warehouse.
+
+8.  Explain in detail decision support system.
+
+9.  Discuss what online analytical processing is and how it differs from data warehousing.
+
+10. Explain data mining in detail.
